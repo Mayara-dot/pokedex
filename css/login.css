@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Open Sans', serif;
+    background:  black; 
+    margin: 0 auto;
+    width: auto;
+    height: 100%;
+    background-image: url(/images/pokedexBackground.jpg);
+    background-size: cover;
+}
+
+.container {
+    margin: 0 auto;
+    padding-top: 150px;
+}

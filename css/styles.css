@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pokemon Solid', 'Orbitron',sans-serif;                                         
+}
+
+html, body {
+    background:  black; 
+    margin: 0 auto;
+    width: auto;
+    height: 100%;
+    background-image: url(/images/pokedex.jpg);
+    background-size: cover;
+}
+
+.container {
+    margin: 0 auto;
+    position: absolute;
+    top: 65%;
+    left: 11%;
+
+}
+
+.container h3, .container.has-text-centered h3 {
+    padding: 5px;
+    font-size: 30px;
+}
+
+
+#icon {
+    cursor: pointer;
+    font-size: 80px;
+    color: rgba(37, 67, 236, 0.8);
+    animation: blink 1s steps(5, start) infinite;
+    background-color: Transparent;
+    outline: none;
+    border: none;
+    position: absolute; 
+    top: 60%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes blink {
+    to {
+        cursor: pointer;
+        visibility: hidden;
+    }
+} 
+
+.active {
+    display: block !important;
+}
+
+.desactive {
+    visibility: hidden !important;
+}
+
+.container.has-text-centered{
+    max-width: 500px;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+}
+
+#cadastrar {
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+button {
+    font-family: 'Pokemon Solid', 'Orbitron', serif;
+}
+
