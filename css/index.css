@@ -18,7 +18,6 @@ html, body {
     position: absolute;
     top: 65%;
     left: 11%;
-
 }
 
 .container h3, .container.has-text-centered h3 {
@@ -63,12 +62,12 @@ html, body {
     left: 35%;
 }
 
-#cadastrar {
+#signUp {
     margin-top: 10px;
     text-decoration: underline;
 }
 
 button {
+    margin-top: 3px;
     font-family: 'Pokemon Solid', 'Orbitron', serif;
 }
-
