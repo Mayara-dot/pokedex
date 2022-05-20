@@ -1,7 +1,7 @@
 <?php
 define('HOST', 'localhost');
 define('USER', 'root');
-define('PASSWD', '140293');
+define('PASSWD', 'XXXX');
 define('DB', 'pokedex');
 
 //tenta conexão
