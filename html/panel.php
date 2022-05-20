@@ -1,5 +1,11 @@
 <?php
 include('../php/verifyLogin.php');
+
+$url = "https://www.canalti.com.br/api/pokemons.json";
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$pokemons = json_decode(curl_exec($ch));
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +24,7 @@ include('../php/verifyLogin.php');
     <title> .: Sua Pokédex</title>
 </head>
 <body>
-<img src="../images/pokemons.jpg" alt="">
+<img id="backImg" src="../images/pokemons.jpg" alt="">
     <section class="hero is-danger">  
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -48,7 +54,49 @@ include('../php/verifyLogin.php');
     <section class="hero is-success">
         <div class="hero-body">
             <div class="container has-text-black">
-               <table class="table is-fullwidth">
+            <?php
+            if(count($pokemons->pokemon)) {
+            $i = 0;
+            foreach($pokemons->pokemon as $Pokemon) {
+            $i++;
+            ?>
+            <?php if($i % 3 == 1) { ?>
+            <div class="columns features">
+            <?php } ?>
+                <div class="column is-4">
+                <div class="card">
+                    <div class="card-image has-text-centered">
+                    <figure class="image is-128x128">
+                        <img src="<?=$Pokemon->img?>" alt="<?=$Pokemon->name?>" class="" data-target="modal-image2">
+                    </figure>
+                    </div>
+                    <div class="card-content has-text-centered">
+                    <div class="content">
+                        <h4><?=$Pokemon->name?></h4>
+                        <p>
+                        <ul>
+                        <?php
+                        if(count($Pokemon->next_evolution)) {
+                            echo "Próximas evoluções: ";
+                            foreach($Pokemon->next_evolution as $ProximaEvolucao) {
+                                echo $ProximaEvolucao->name . " ";
+                            }
+                        } else {
+                            echo "Não possui próximas evoluções ";
+                        }
+                        ?>
+                        </ul>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            <?php if($i % 3 == 0) { ?>
+            </div>
+            <?php } } } else { ?>
+                <strong>Nenhum pokemón retornado pela API</strong>
+            <?php } ?>
+               <!--<table class="table is-fullwidth">
                    <tr>
                        <th>Imagem</th>
                        <th>Nome</th>
@@ -61,7 +109,7 @@ include('../php/verifyLogin.php');
                        <td>teste</td>
                        <td>teste</td>
                    </tr>
-               </table>
+               </table>-->
             </div>
         </div>
     </section>
