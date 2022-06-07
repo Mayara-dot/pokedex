@@ -33,10 +33,10 @@ include('../php/verifyLogin.php');
             <nav class="tabs is-boxed is-fullwidth">
                 <div class="container">
                     <ul>
-                        <li class="is-active">
+                        <li>
                             <a href="panel.php">Pokémons</a>
                         </li>
-                        <li>
+                        <li class="is-active">
                             <a href="/html/pokedex.php">Sua Pokédex</a>
                         </li>
                         <li>
@@ -54,61 +54,10 @@ include('../php/verifyLogin.php');
                     <p>Barra de pesquisa//filtro</p>
                 </div>
                 <div class="grid-container">
-                    <?php require __DIR__."/../php/displayNamePokemon.php"?>
+                  
                 </div>
             </div>
         </div>
     </section>
-
-
-    <!--MODAL POKEMON-->
-    <section>
-        <div id="modalPokemon" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card has-text-centered">
-            <header class="modal-card-head">
-                <p id="titlePokemon"class="modal-card-title"> <span id="namePokemon"></span></p>
-            </header>
-
-            <section id="bodyPokemon"class="modal-card-body ">
-                <div class="content">
-                <figure class="image">
-                <img id="imgPokemon" src="" id="imgPokemon" alt="Pokemonimage">
-                </figure>
-
-                <dl>
-                <dt>--Tipo--</dt>
-                    <dd><span id="typePokemon"></span> </dd>
-                </br>    
-                <dt>--Fraquezas--</dt>
-                    <dd><span id="weaknessePokemon"></span></dd>
-                </br>  
-                <dt>--Próximas Evoluções--</dt>
-                    <dd><span id="nextEvolutionPokemon"></span></dd>
-                </dl>
-                </div>
-            </section>
-
-            <footer class="modal-card-foot">
-
-                <button type="submit" class="button is-info is-outlined">
-                    <span class="icon">
-                    <i class="fa-solid fa-plus"></i>
-                    </span>
-                    <span>Capture esse Pokémon</span>
-                </button>
-
-                <button id="closeModal" class="button is-danger is-outlined" aria-label="close">
-                    <span>Fechar</span>
-                    <span class="icon is-small">
-                    <i class="fas fa-times"></i>
-                    </span>
-                </button>
-            </footer>
-        </div>
-        </div>
-    </section>
-
-    <script src="/../JS/modal.js"></script>
 </body>
 </html>

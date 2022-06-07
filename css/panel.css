@@ -1,6 +1,7 @@
 * {
     margin: 0;
-    font-family: 'Orbitron',sans-serif;       
+	padding: 0;
+    font-family: 'Orbitron',sans-serif, 'Segoe UI';       
 }
 
 html, body {
@@ -23,11 +24,12 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    position: relative;
-    z-index: 2;
+	z-index: 2; /*para definir a imagem de fundo mais opaca*/
 }
 
 .hero.is-danger p {
+    position: absolute;
+	top: 0%;
     font-size: 50px;
 }
 
@@ -44,31 +46,59 @@ html, body {
     width: 50%;
     height: 80%;
     background-color: white;
-    border-radius: 0px 5px 0px 0px;
+    border-radius: 0px 5px 5px 0px;
+	z-index: 2;
     overflow-x: auto;
+}
+
+.hero.is-success .hero-body {
+	padding: 10px;
+	margin: auto 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template: "col-1 col-2 col-3";
+
 }
 
 .card-content .content {
     font-size: 14px;
     margin: 1rem 1rem;
-  }
+}
 
-  .card-content .content h4 {
-    font-size: 16px;
-    font-weight: 700;
-  }
+.card-content .content h4 {
+	font-size: 16px;
+	font-weight: 700;
+}
 
-  .card {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
-    margin-bottom: 2rem;
-  }
+.card {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.18);
+	margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+    cursor: pointer;
 
-  .is-3:hover {
-    box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);
-  }
+}
 
-  .image{
-    display: block;
-    margin:0px auto;
-    padding-top:20px;
-  }
+.card:hover {
+    border: 1px dashed red;
+}
+
+.modal-card {
+    width: min-content;
+
+}
+
+.image img {
+    width: auto;
+}
+
+#modalPokemon dt {
+    font-weight: bolder;
+    color: red;
+}
+
+#modalPokemon dd span {
+    font-family:'Segoe UI';
+}

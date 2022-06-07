@@ -80,20 +80,7 @@ session_start();
                                 </a>
                             </div>  
 
-                            <script> //Função para visualizar senha quando clciar no botão, ele muda o tipo do input
-                                let btn = document.querySelector('#showPasswd');
-
-                                    btn.addEventListener('click', function() {
-
-                                        let input = document.querySelector('#passwd');
-
-                                        if(input.getAttribute('type') == 'password') {
-                                            input.setAttribute('type', 'text');
-                                        } else {
-                                            input.setAttribute('type', 'password');
-                                        }
-
-                                    });
+                            <script src="/../JS/showPasswd.js"> //Função para visualizar senha quando clciar no botão, ele muda o tipo do input     
                             </script>
 
                             <div id="signUp" class="field">
